@@ -26,7 +26,7 @@ function App() {
     }
   });
   const [ cargando, guardarCargando] = useState(false);
-  const {datos} =resumen;
+  const { cotizacion, datos } = resumen;
   return (
     <Contenedor>
         <Header
@@ -39,12 +39,19 @@ function App() {
             guardarResumen={guardarResumen}
             guardarCargando={guardarCargando}
           ></Formulario>
-
+          { cargando ? <Spinner /> : null }
           <Resumen
             datos ={datos}
             >
 
           </Resumen>
+
+          { !cargando  ?
+                <Resultado 
+                  cotizacion={cotizacion}
+                /> : null
+            }
+
         </ContenedorFormulario>
     </Contenedor>
   );
