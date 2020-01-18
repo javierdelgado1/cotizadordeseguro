@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './components/Header';
 
 import Formulario from './components/Formulario';
@@ -17,6 +17,16 @@ const ContenedorFormulario = styled.div`
   padding: 3rem;
 `
 function App() {
+  const [resumen, guardarResumen] = useState({
+    cotizacion : 0,
+    datos:{
+      marca :'',
+      year:'',
+      plan:''
+    }
+  });
+  const [ cargando, guardarCargando] = useState(false);
+  const {datos} =resumen;
   return (
     <Contenedor>
         <Header
@@ -25,7 +35,16 @@ function App() {
         </Header>
 
         <ContenedorFormulario>
-          
+          <Formulario
+            guardarResumen={guardarResumen}
+            guardarCargando={guardarCargando}
+          ></Formulario>
+
+          <Resumen
+            datos ={datos}
+            >
+
+          </Resumen>
         </ContenedorFormulario>
     </Contenedor>
   );
