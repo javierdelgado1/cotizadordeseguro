@@ -6,7 +6,7 @@ export function obtenerDiferenciaYear(year) {
 // calcula el total a pagar segun la marca
 export function calcularMarca(marca) {
     let incremento;
-
+    
     switch(marca) {
         case 'europeo':
             incremento = 1.30;

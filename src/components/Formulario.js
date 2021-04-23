@@ -65,7 +65,7 @@ const Formulario = ({guardarResumen, guardarCargando}) =>{
     const [error, guardarError] = useState(false);
     const cotizarSeguro = e =>{
         e.preventDefault();
-
+        debugger
         if(marca.trim() === '' || year.trim() === '' || plan.trim() === ''){
             guardarError(true);
             return
@@ -124,7 +124,7 @@ const Formulario = ({guardarResumen, guardarCargando}) =>{
                     <option value="">--Seleccione--</option>
                     <option value="americano">Americano</option>
                     <option value="europeo">Europeo</option>
-                    <option value="Asiatico">Asiatico</option>
+                    <option value="asiatico">Asiatico</option>
                 </Select>
             </Campo>
 
